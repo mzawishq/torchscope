@@ -1,8 +1,11 @@
 # torchscope
 ## 🔋 Energy Estimation Feature
-This fork extends the original [torchscope](https://github.com/Tramac/torchscope) by adding **energy consumption analysis** for deep learning models, based on:
+This fork extends the original [torchscope](https://github.com/Tramac/torchscope) by adding **energy consumption analysis** for deep learning models, based on the sum of energy for FLOPs and energy for memory calculated as below:
 - **FLOPs Energy**: `total_flops * 2.3 pJ` 
-- **Memory Energy**: `memory_MB * 640 pJ`
+- **Memory Energy**: `total_memory * 640 pJ`
+
+Note that the values `2.3pJ` and `640pJ` denotes the energy required to compute each FLOP and to store each MB, respectively. These values are obtained from [Han et al.](https://arxiv.org/abs/1602.01528).
+
 
 ### New Methods:
 | Method                      | Description                                  |
